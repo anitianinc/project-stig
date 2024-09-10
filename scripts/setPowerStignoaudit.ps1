@@ -67,8 +67,8 @@ if(!(Test-Path -Path $localDownloadPath))
 }
 
 # Download and install Edge
-
-$edgeDownloadUrl = 'https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/dba89b53-9614-4a7c-b1f3-85e5dd724930/MicrosoftEdgeEnterpriseX64.msi'
+# https://learn.microsoft.com/en-us/answers/questions/1036113/is-there-a-permanent-link-to-the-latest-version-of
+$edgeDownloadUrl = 'https://go.microsoft.com/fwlink/?LinkID=2093437'
 
 $edgeFilePath = join-path $localDownloadPath MicrosoftEdgeEnterpriseX64.msi
 
@@ -77,8 +77,8 @@ Invoke-RestMethod -Uri $edgeDownloadUrl -OutFile $edgeFilePath
 Start-Process -Wait -FilePath $edgeFilePath -ArgumentList "/quiet"
 
 # Download, unzip and install SCAP
-
-$windowsSCAPUrl = "https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/scc-5.5_Windows_bundle.zip"
+# https://public.cyber.mil/stigs/scap/ "Scap Tools - Windows Bundle"
+$windowsSCAPUrl = "https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/scc-5.10_Windows_bundle.zip"
 
 $scapFilePath = join-path $localDownloadPath scc-5.5_Windows_bundle.zip
 
