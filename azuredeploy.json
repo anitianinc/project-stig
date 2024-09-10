@@ -40,7 +40,8 @@
     "srv2019DCMofUrl": "[uri(deployment().properties.templateLink.uri, 'mof/WindowsServer2019DCv2r1/localhost.mof')]",
     "srv2016MofUrl": "[uri(deployment().properties.templateLink.uri, 'mof/WindowsServer2016v1r12/localhost.mof')]",
     "srv2016DCMofUrl": "[uri(deployment().properties.templateLink.uri, 'mof/WindowsServer2016DCv1r12/localhost.mof')]",
-    "baseUrl": "[deployment().properties.templateLink.uri]"
+    "setAuditingStigUrl": "[uri(deployment().properties.templateLink.uri, 'scripts/auditStig.ps1')]",
+    "setPowerStigUrl": "[uri(deployment().properties.templateLink.uri, 'scripts/setPowerStignoaudit.ps1')]"
   },
   "resources": [
     {
@@ -284,10 +285,10 @@
             "value": "MS"
           },
           "setPowerStigUrl": {
-            "value": "[uri(deployment().properties.templateLink.uri, 'scripts/setPowerStignoaudit.ps1')]"
+            "value": "[variables('setPowerStigUrl')]"
           },
           "setAuditingStigUrl": {
-            "value": "[uri(deployment().properties.templateLink.uri, 'scripts/auditStig.ps1')]"
+            "value": "[variables('setAuditingStigUrl')]"
           }
         }
       }
