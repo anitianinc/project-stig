@@ -28,11 +28,15 @@
       }, 
       "osRole": {
         "type": "string"
+      },
+      "setPowerStigUrl": {
+        "type": "string"
+      },
+      "setAuditingStigUrl": {
+        "type": "string"
       }
     },
     "variables": {
-      "setPowerStigUrl": "[uri(deployment().properties.templateLink.uri, 'scripts/setPowerStignoaudit.ps1')]",
-      "setAuditingStigUrl": "[uri(deployment().properties.templateLink.uri, 'scripts/auditStig.ps1')]",
       "wsResourceId": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/',resourceGroup().name, '/providers/','Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'))]"
     },
     "resources": [
