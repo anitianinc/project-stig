@@ -75,25 +75,25 @@
         }
       }
     },
-    {
-      "name": "workspaceDashboardDeploy",
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2019-10-01",
-      "resourceGroup": "[parameters('rgName')]",
-      "dependsOn": ["workspaceDeploy"],
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "[variables('workspaceDashboardUrl')]",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "workspaceName": {
-            "value": "[reference('workspaceDeploy').outputs.workspaceName.value]"
-          }
-        }
-      }
-    },
+    // {
+    //   "name": "workspaceDashboardDeploy",
+    //   "type": "Microsoft.Resources/deployments",
+    //   "apiVersion": "2019-10-01",
+    //   "resourceGroup": "[parameters('rgName')]",
+    //   "dependsOn": ["workspaceDeploy"],
+    //   "properties": {
+    //     "mode": "Incremental",
+    //     "templateLink": {
+    //       "uri": "[variables('workspaceDashboardUrl')]",
+    //       "contentVersion": "1.0.0.0"
+    //     },
+    //     "parameters": {
+    //       "workspaceName": {
+    //         "value": "[reference('workspaceDeploy').outputs.workspaceName.value]"
+    //       }
+    //     }
+    //   }
+    // },
     {
       "name": "managedIdentityDeploy",
       "type": "Microsoft.Resources/deployments",
