@@ -80,7 +80,7 @@ Start-Process -Wait -FilePath $edgeFilePath -ArgumentList "/quiet"
 # https://public.cyber.mil/stigs/scap/ "Scap Tools - Windows Bundle"
 $windowsSCAPUrl = "https://dl.dod.cyber.mil/wp-content/uploads/stigs/zip/scc-5.10_Windows_bundle.zip"
 
-$scapFilePath = join-path $localDownloadPath scc-5.5_Windows_bundle.zip
+$scapFilePath = join-path $localDownloadPath scc-5.10_Windows_bundle.zip
 
 Invoke-RestMethod -Uri $windowsSCAPUrl -OutFile $scapFilePath 
 
@@ -88,7 +88,7 @@ Invoke-RestMethod -Uri $windowsSCAPUrl -OutFile $scapFilePath
 
 Expand-Archive -LiteralPath $scapFilePath -DestinationPath $localDownloadPath
 
-$sccPath = Join-Path $localDownloadPath scc-5.5_Windows\SCC_5.5_Windows_Setup.exe
+$sccPath = Join-Path $localDownloadPath scc-5.10_Windows\SCC_5.10_Windows_Setup.exe
 
 Start-Process -Wait -FilePath $sccPath -ArgumentList "/VERYSILENT /DIR=`"C:\SCC`" /TYPE=custom /COMPONENTS=`"Content\NIST_USGCB_SCAP_Content,Content\DISA_STIG_SCAP_Content,Other\SCC_Service`""
 
